@@ -21,14 +21,18 @@ def get_main_menu_selection():
         print("1. View Tasks")
         print("=================================")
         view_tasks()
+
     elif menu_selected == 2:
         clear_console()
         print("2. Add Tasks")
         print("=================================")
+        add_task()
+
     elif menu_selected == 3:
         clear_console()
-        exit_vlaue = input("3. would you like to exit (y/n): ")
+        exit_vlaue = input("3. would you like to exit [y/n]: ")
         print("=================================")
+
     return
 
 
@@ -40,9 +44,25 @@ def view_tasks(tasks={"Do dishes" : False, "Get groceries": True}):
 
     if total_task > 0:
         for task, status in tasks.items():
-            print(f"{task} : {'Complete' if status else 'Incomplete'}")
+            print(f"-{task} \n\tstatus: {'Complete' if status else 'Incomplete'}")
     return tasks
 
+
+#Add task
+def add_task(tasks={}):
+    value = input("what task would you like to add: ")
+    tasks[value] = False
+    #keep getting new task to add to the dict
+    while value.lower() != 'n':
+        value = input("Would you like to add another task [y/n]: ")
+        if value.lower() == 'y':
+            value = input("what task would you like to add: ")
+            tasks[value] = False
+    
+    #Show the updated task after user is done adding task
+    clear_console()
+    view_tasks(tasks)
+    return tasks
 
 
 def clear_console():

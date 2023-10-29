@@ -6,14 +6,12 @@ def clear_console():
     return
 
 
-#display the menu options on the console
-def display_main_menu():
-    print("================ TODOs ===============")
-    print("1. View Tasks")
-    print("2. Add Task")
-    print("3. Exit")
-    print("====================================")
-    return 
+#get generic user input
+def get_user_input(prompt):
+    prompt += ": "
+    value = input(prompt)
+    return value
+
 
 #get user menu selection
 def get_main_menu_selection():

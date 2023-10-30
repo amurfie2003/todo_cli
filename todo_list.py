@@ -1,4 +1,4 @@
-import task as Task
+from task import Task
 
 class TodoList:
     def __init__(self, user_name):
@@ -16,14 +16,14 @@ class TodoList:
             if self.task_name.lower() == 'y':
                 self.task_name = input("what task would you like to add: ")
                 new_task = Task(self.task_name)
-                self.tasks.append(new_task)
+                self.list_of_tasks.append(new_task)
     
     def view_task(self):
-        total_task = len(self.tasks)
+        total_task = len(self.list_of_tasks)
         print(f"You currently have {total_task} tasks")
         print("=================================")
 
         if total_task > 0:
-            for task in self.task:
+            for task in self.list_of_tasks:
                 print(f"-{task.name} \n\tstatus: {'Complete' if task.status else 'Incomplete'}")
         return 

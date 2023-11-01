@@ -1,5 +1,4 @@
 import os
-import pickle
 
 #clears the console
 def clear_console():

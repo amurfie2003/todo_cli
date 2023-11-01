@@ -13,7 +13,7 @@ class Menu:
     
     #display the selected menu
     @staticmethod
-    def display_menu_option(option, todos):
+    def main_menu_option(option, todos):
         if option == 1:
             utils.clear_console()
             print("1. View Tasks")
@@ -26,5 +26,4 @@ class Menu:
             todos.create_task()
             utils.clear_console()
             todos.view_task()
-
         return 

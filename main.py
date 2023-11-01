@@ -12,7 +12,7 @@ utils.clear_console()
 Menu.view_main_menu(user_name)
 
 menu_option = utils.get_user_input("Make a selection from the menu")
-Menu.display_menu_option(int(menu_option), todos)
+Menu.main_menu_option(int(menu_option), todos)
 
 
  
